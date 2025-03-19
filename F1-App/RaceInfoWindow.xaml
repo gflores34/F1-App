@@ -1,0 +1,91 @@
+﻿<Window x:Class="F1_App.RaceInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:F1_App"
+        mc:Ignorable="d"
+        Title="SessionInfoWindow"
+        Height="300"
+        Width="400"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Black"
+        Opacity=".9"
+        MouseDown="Window_MouseDown">
+
+    <Window.Clip>
+        <CombinedGeometry GeometryCombineMode="Union">
+            <CombinedGeometry.Geometry1>
+                <RectangleGeometry Rect="0,0,400,300" RadiusX="20" RadiusY="20"/>
+            </CombinedGeometry.Geometry1>
+            <CombinedGeometry.Geometry2>
+                <RectangleGeometry Rect="20,20,20,20"/>
+            </CombinedGeometry.Geometry2>
+        </CombinedGeometry>
+    </Window.Clip>
+
+    <Grid>
+        <Label Content="SESSION INFO" Foreground="#B0B0B5" Height="40" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontSize="20" Margin="90,10,90,250" FontFamily="{StaticResource Formula1 Display-Bold}" FontWeight="Bold"/>
+
+        <StackPanel Margin="10,55,10,154">
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Session Name: " Foreground="White"/>
+        <Run x:Name="SessionNameValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Location: " Foreground="White"/>
+        <Run x:Name="LocationValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Country: " Foreground="White"/>
+        <Run x:Name="CountryValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,5">
+        <Run Text="Track: " Foreground="White"/>
+        <Run x:Name="TrackValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+        </StackPanel>
+
+        <Label Content="WEATHER" HorizontalAlignment="Center" Foreground="#B0B0B5" FontFamily="{StaticResource Formula1 Display-Bold}" FontSize="20" Margin="0,146,0,116"/>
+
+        <StackPanel Margin="10,189,10,10">
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Track Temp: " Foreground="White"/>
+        <Run x:Name="TrackTempValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Air Pressure: " Foreground="White"/>
+        <Run x:Name="PressureValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Humidity: " Foreground="White"/>
+        <Run x:Name="HumidityValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+
+            <TextBlock FontFamily="{StaticResource Formula1 Display-Regular}" Margin="0,0,0,10">
+        <Run Text="Wind Speed: " Foreground="White"/>
+        <Run x:Name="WindSpeedValue" Foreground="Cyan" FontFamily="{StaticResource Formula1 Display-Bold}"/>
+            </TextBlock>
+        </StackPanel>
+
+        <Label x:Name="AirTempLabel" Content="48°C" Foreground="Yellow" FontFamily="{StaticResource Formula1 Display-Bold}" Margin="330,151,10,121"/>
+        <Button Content="X"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="19"
+                Height="23"
+                Margin="0,7,10,0"
+                Click="CloseButton_Click"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Foreground="Red"
+                FontSize="15"
+                FontWeight="Bold"/>
+    </Grid>
+</Window>
